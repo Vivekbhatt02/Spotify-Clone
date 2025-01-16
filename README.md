@@ -48,6 +48,14 @@ To customize the playlists and add songs according to your choice or to add more
 
 
 ```markdown
+
+Spotify-Clone/ ├── assets/ # Images and other media files │ ├── images/ # UI and playlist images │ │ ├── bg.jpg # Background image │ │ ├── logo.svg # Logo for the app ├── songs/ # Playlist folders │ ├── playlist1/ # Example playlist folder │ │ ├── info.json # Metadata for the playlist │ │ └── cover.jpg # Cover image for the playlist │ └── playlist2/ # Another example playlist folder │ ├── info.json # Metadata for the playlist │ └── cover.jpg # Cover image for the playlist ├── index.html # Main HTML file ├── style.css # CSS for styling ├── script.js # JavaScript for app functionality └── README.md # Project documentation
+
+markdown
+Copy
+Edit
+
+
 ### Contribution and Issues:
 
 #### Contributing:
