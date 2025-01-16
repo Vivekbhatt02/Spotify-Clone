@@ -82,4 +82,3 @@ Thanks to all open-source tools and resources that made this project possible.
 ---
 
 ⭐ **If you like this project, give it a star on GitHub!** ⭐
-```
