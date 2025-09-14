@@ -1,0 +1,72 @@
+{
+  "albums": [
+    {
+      "folder": "Arijit Singh",
+      "title": "Arijit Singh Hits",
+      "description": "Best of Arijit Singh",
+      "cover": "songs/Arijit Singh/cover.jpg",
+      "songs": [
+        "Apna Bana Le Piya - Arijit Singh.mp3",
+        "Har Har Gange - Arijit Singh.mp3",
+        "Heeriye - Arijit Singh.mp3",
+        "Ilahi - Arijit Singh.mp3",
+        "Kalank - Arijit Singh.mp3",
+        "Satranga - Arijit Singh.mp3",
+        "Tainu Khabar Nahi - Arijit Singh, Amitabh Bhattacharya.mp3"
+      ]
+    },
+    {
+      "folder": "Diljit Paaji",
+      "title": "Diljit Paaji Collection",
+      "description": "Popular Punjabi hits",
+      "cover": "songs/Diljit Paaji/cover.jpg",
+      "songs": [
+        "CASE- Diljit Dosanjh.mp3",
+        "CLASH- Diljit Dosanjh.mp3",
+        "G.O.A.T. - Diljit Dosanjh.mp3",
+        "Ishq Di Baajiyaan - Diljit Dosanjh.mp3",
+        "Lemonade - Diljit Dosanjh.mp3"
+      ]
+    },
+    {
+      "folder": "Good Jams",
+      "title": "Good Jams",
+      "description": "Feel-good music",
+      "cover": "songs/Good Jams/cover.jpg",
+      "songs": [
+        "Aaoge Tum Kabhi- The Local Train.mp3",
+        "Bhaag Milkha - Farhan Akhtar And Siddharth Mahadevan.mp3",
+        "Choo Lo - The Local Train.mp3",
+        "Haaye Ve - Ammy Virk.mp3",
+        "Kaise Hua - Kabir Singh.mp3",
+        "Pehle Bhi mai.mp3",
+        "Tere Bina - A. R. Rahman Meets Berklee.mp3",
+        "Zaroor -  Aparshakti Khurana.mp3"
+      ]
+    },
+    {
+      "folder": "Just Chill",
+      "title": "Just Chill",
+      "description": "Relaxing vibes",
+      "cover": "songs/Just Chill/cover.jpg",
+      "songs": [
+        "Bas Kar Ji - Pranav  Darshana.mp3",
+        "Bulleya- Papon.mp3",
+        "Iktara - Amit Trivedi.mp3",
+        "Iraaday - Abdul Hanan.mp3"
+      ]
+    },
+    {
+      "folder": "Top English Hits",
+      "title": "Top English Hits",
+      "description": "Popular English songs",
+      "cover": "songs/Top English Hits/cover.jpg",
+      "songs": [
+        "Believer - Imagine Dragons.mp3",
+        "I Aint Worried - OneRepublic.mp3",
+        "Infinity - Jaymes Young.mp3",
+        "Peaky Blinders.mp3"
+      ]
+    }
+  ]
+}

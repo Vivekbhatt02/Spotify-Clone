@@ -1,5 +1,3 @@
-console.log("Lets work on js")
-
 let currentSong = new Audio();
 let songs;
 let currFolder;
@@ -20,18 +18,18 @@ function secondsToMinutesSeconds(seconds) {
 
 async function getSongs(folder) {
     currFolder = folder;
-    let a = await fetch(`http://127.0.0.1:3000/${folder}/`)
-    let response = await a.text();
-    let div = document.createElement("div")
-    div.innerHTML = response;
-    let as = div.getElementsByTagName("a")
-    songs = []
-    for (let index = 0; index < as.length; index++) {
-        const element = as[index];
-        if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split(`/${folder}/`)[1])
+    try {
+        let a = await fetch('./songs-manifest.json');
+        let manifest = await a.json();
+        let album = manifest.albums.find(album => `songs/${album.folder}` === folder);
+        if (album) {
+            songs = album.songs;
+        } else {
+            songs = [];
         }
-
+    } catch (error) {
+        console.error('Error loading songs:', error);
+        songs = [];
     }
 
 
@@ -64,7 +62,7 @@ async function getSongs(folder) {
 }
 
 const playMusic = (track, pause = false) => {
-    currentSong.src = `/${currFolder}/` + track
+    currentSong.src = `./${currFolder}/` + track
     if (!pause) {
         currentSong.play()
         play.src = "img/pause.svg"
@@ -76,23 +74,13 @@ const playMusic = (track, pause = false) => {
 
 async function displayAlbums() {
     console.log("Displaying Albums")
-    let a = await fetch(`http://127.0.0.1:3000/songs/`)
-    let response = await a.text();
-    let div = document.createElement("div")
-    div.innerHTML = response;
-    let anchors = div.getElementsByTagName("a")
-    let cardContainer = document.querySelector(".cardContainer")
-    let array = Array.from(anchors)
-    for (let index = 0; index < array.length; index++) {
-        const e = array[index];
+    try {
+        let a = await fetch('./songs-manifest.json');
+        let manifest = await a.json();
+        let cardContainer = document.querySelector(".cardContainer")
 
-        if (e.href.includes("/songs")) {
-            let folder = e.href.split("/").slice(-2)[0]
-            // Get the metadata of the folder
-            let a = await fetch(`http://127.0.0.1:3000/songs/${folder}/info.json`)
-            let response = await a.json();
-            console.log(response)
-            cardContainer.innerHTML = cardContainer.innerHTML + `<div data-folder="${folder}" class="card">
+        for (const album of manifest.albums) {
+            cardContainer.innerHTML = cardContainer.innerHTML + `<div data-folder="${album.folder}" class="card">
                         <div class="play">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50"
                                 color="#000000" fill="#000">
@@ -102,13 +90,13 @@ async function displayAlbums() {
                                     stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
                             </svg>
                         </div>
-                        <img src="/songs/${folder}/cover.jpg" alt="">
-                        <h2>${response.title}</h2>
-                        <p>${response.description}</p>
+                        <img src="${album.cover}" alt="">
+                        <h2>${album.title}</h2>
+                        <p>${album.description}</p>
                     </div>`
-
         }
-
+    } catch (error) {
+        console.error('Error loading albums:', error);
     }
     
 
@@ -138,8 +126,10 @@ async function main() {
 
 
     // Get the list of all the songs
-    await getSongs("songs/ncs")
-    playMusic(songs[0], true)
+    await getSongs("songs/Arijit Singh")
+    if (songs.length > 0) {
+        playMusic(songs[0], true)
+    }
 
 
     //Display all the albums on the page
