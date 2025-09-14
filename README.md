@@ -18,7 +18,7 @@ This project is a Spotify clone that emulates key features of the popular music 
 ## Getting Started
 
 ### Live Demo
-Try out the live version of the project here: [Spotify Clone Demo](https://spotifyclonebyvivek.freewebhostmost.com/).
+Try out the live version of the project here: [Spotify Clone Demo](https://vivekbhatt02.github.io/Spotify-Clone/).
 Experience responsive design, dynamic playlists, and playback controls in action.
 
 ### Clone the Repository
